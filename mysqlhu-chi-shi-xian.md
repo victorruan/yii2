@@ -17,4 +17,21 @@ Yii2中实现了mysql方式的mutex。可以看看 yii\mutex\MysqlMutex 的实�
             )->queryScalar();
         });
     }
+    
+    /**
+     * Releases lock by given name.
+     * @param string $name of the lock to be released.
+     * @return bool release result.
+     * @see http://dev.mysql.com/doc/refman/5.0/en/miscellaneous-functions.html#function_release-lock
+     */
+    protected function releaseLock($name)
+    {
+        return $this->db->useMaster(function ($db) use ($name) {
+            /** @var \yii\db\Connection $db */
+            return (bool) $db->createCommand(
+                'SELECT RELEASE_LOCK(:name)',
+                [':name' => $name]
+            )->queryScalar();
+        });
+    }
 ```
