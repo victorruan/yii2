@@ -2,7 +2,7 @@
 
 使用例子
 
-```
+```php
  if ($mutex->acquire($mutexName)) {
      // business logic execution
  } else {
