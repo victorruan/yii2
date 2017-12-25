@@ -1,8 +1,7 @@
-# **mutex\(互斥\)**
+# **mutex (互斥) **
 
-> Yii2中的锁的实现需要继承 yii\mutex\Mutex 抽象类。
->
-> 实现两个抽象方法
+Yii2中的锁的实现需要继承 yii\mutex\Mutex 抽象类。
+实现两个抽象方法
 
 ```php
 //这个抽象方法需要被子类实现，根据 $name 获取锁
@@ -16,7 +15,7 @@ abstract protected function releaseLock($name);
 ###### 使用例子一
 
 ```php
- if($mutex->acquire($mutexName)) {
+ if ($mutex->acquire($mutexName)) {
       // 执行业务逻辑
  } else {
      // execution is blocked!
@@ -33,13 +32,14 @@ if ($mutex->acquire($mutexName,10)) {
 }
 ```
 
-* ###### 存放文件的路径
+## yii\mutex\FileMutex (文件锁实现)
+###### 存放文件的路径
 
 ```php
 public $mutexPath = '@runtime/mutex';
 ```
 
-* ###### 如何根据锁名称获取锁文件路径
+###### 如何根据锁名称获取锁文件路径
 
 ```php
 protected function getLockFilePath($name)
@@ -48,7 +48,7 @@ protected function getLockFilePath($name)
 }
 ```
 
-* ###### 是否自动释放
+###### 是否自动释放
 
 ```php
 public $autoRelease = true;
