@@ -1,7 +1,7 @@
 Yii2中实现了mysql方式的mutex。可以看看 yii\mutex\MysqlMutex 的实现。
 
 ```php
-     /**
+    /**
      * Acquires lock by given name.
      * @param string $name of the lock to be acquired.
      * @param int $timeout time (in seconds) to wait for lock to become released.
