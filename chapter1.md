@@ -12,8 +12,6 @@ abstract protected function acquireLock($name, $timeout = 0);
 abstract protected function releaseLock($name);
 ```
 
-
-
 * 如果获取不到锁，支持添加最大等待时间
 
 ###### 使用例子一
