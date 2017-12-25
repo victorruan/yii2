@@ -5,20 +5,19 @@
 > 实现两个抽象方法
 
 ```php
-//这个抽象方法需要被子类实现，根据$name获取锁
+//这个抽象方法需要被子类实现，根据 $name 获取锁
+//如果获取不到锁，支持添加最大等待时间 $timeout
 abstract protected function acquireLock($name, $timeout = 0);
 
 //这个抽象方法需要被子类实现，根据$name释放锁资源
 abstract protected function releaseLock($name);
 ```
 
-* 如果获取不到锁，支持添加最大等待时间
-
 ###### 使用例子一
 
 ```php
- if ($mutex->acquire($mutexName)) {
-     // 执行业务逻辑
+ if($mutex->acquire($mutexName)) {
+      // 执行业务逻辑
  } else {
      // execution is blocked!
  }
