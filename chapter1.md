@@ -12,7 +12,7 @@
 
 ##### 文件锁
 
-* ###### 存放文件的路径 
+* ###### 存放文件的路径
 
 ```php
 public $mutexPath = '@runtime/mutex';
@@ -24,7 +24,7 @@ public $mutexPath = '@runtime/mutex';
 protected function getLockFilePath($name)
 {
    return $this->mutexPath . DIRECTORY_SEPARATOR . md5($name) . '.lock';
-} 
+}
 ```
 
 
