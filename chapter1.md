@@ -1,5 +1,19 @@
 # **mutex\(互斥\)**
 
+> Yii2中的锁的实现需要继承 yii\mutex\Mutex 抽象类。
+>
+> 实现两个抽象方法
+
+```php
+//这个抽象方法需要被子类实现，根据$name获取锁
+abstract protected function acquireLock($name, $timeout = 0);
+
+//这个抽象方法需要被子类实现，根据$name释放锁资源
+abstract protected function releaseLock($name);
+```
+
+
+
 * 如果获取不到锁，支持添加最大等待时间
 
 ###### 使用例子一
