@@ -1,7 +1,7 @@
 Yii2中实现了redis方式的mutex。可以看看 yii\redis\Mutex 的实现。
 
 ```php
- /**
+    /**
      * Acquires a lock by name.
      * @param string $name of the lock to be acquired. Must be unique.
      * @param int $timeout time (in seconds) to wait for lock to be released. Defaults to `0` meaning that method will return
