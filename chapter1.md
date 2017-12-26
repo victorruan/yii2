@@ -1,4 +1,4 @@
-# **mutex (互斥) **
+# mutex (互斥)
 
 Yii2中的锁的实现需要继承 yii\mutex\Mutex 抽象类。
 实现两个抽象方法
